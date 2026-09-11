@@ -1,11 +1,11 @@
 /**
- * Main Application Controller
+ * Main Application Controller - Varshith Reddy Bommineni
  * Manages:
  * - Domain Shift Theme Engine (Blue Lock vs Demon Slayer)
  * - Audio SFX integrations
  * - Typewriter text rotator
  * - Interactive Skills filtering
- * - Terminal interactive CLI
+ * - Terminal interactive CLI with full resume & project intelligence
  * - Navigation and copy interactions
  */
 
@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusTag = document.getElementById('statusTag');
   const skillsTag = document.getElementById('skillsTag');
   const projectsTag = document.getElementById('projectsTag');
-  const journeyTag = document.getElementById('journeyTag');
   const contactTag = document.getElementById('contactTag');
   const awakenBtn = document.getElementById('awakenBtn');
   const footerQuote = document.getElementById('footerQuote');
@@ -69,27 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (theme === 'bluelock') {
       themeLabel.textContent = 'EGO MODE (BLUE LOCK)';
-      heroBadgeText.textContent = 'METAVISION ACTIVE • PLAYER #1';
+      heroBadgeText.textContent = 'METAVISION ACTIVE • READY FOR INTERNSHIP';
       kanjiWatermark.textContent = '世界一のエゴイスト';
       hudRankTop.textContent = 'RANK S // EGOIST';
       avatarTagline.textContent = '覚醒・FLOW STATE';
       statusTag.textContent = 'METAVISION SCAN REPORT';
       skillsTag.textContent = 'BREATHING TECHNIQUES & WEAPONS';
       projectsTag.textContent = 'OFFICIAL MATCHES & COMBAT ARCHIVE';
-      journeyTag.textContent = 'SELECTION PHASES & AWAKENING';
       contactTag.textContent = 'DIRECT CONNECTION PROTOCOL';
       awakenBtn.innerHTML = '<span>⚡ AWAKEN EGO</span>';
       footerQuote.textContent = '「 世界一のエゴイストでなければ、世界一のストライカーにはなれない 」';
     } else {
       themeLabel.textContent = 'BREATHING MODE (DEMON SLAYER)';
-      heroBadgeText.textContent = 'TOTAL CONCENTRATION • HASHIRA';
+      heroBadgeText.textContent = 'TOTAL CONCENTRATION • HASHIRA INTERN';
       kanjiWatermark.textContent = '全集中・常中';
       hudRankTop.textContent = 'HASHIRA // SUN BREATHING';
       avatarTagline.textContent = '心を燃やせ・SET HEART ABLAZE';
       statusTag.textContent = 'HASHIRA COMBAT ASSESSMENT';
       skillsTag.textContent = 'BREATHING FORMS & NICHIRIN BLADES';
       projectsTag.textContent = 'DEMON SLAYING EXPEDITIONS';
-      journeyTag.textContent = 'FINAL SELECTION TO PILLAR';
       contactTag.textContent = 'KASUGAI CROW DISPATCH';
       awakenBtn.innerHTML = '<span>🔥 HINOKAMI KAGURA</span>';
       footerQuote.textContent = '「 胸を張って生きろ。己の弱さや不甲斐なさにどれだけ打ちのめされようと、心を燃やせ 」';
@@ -107,10 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 4. Awakening Special Power Burst
-  awakenBtn.addEventListener('click', (e) => {
+  awakenBtn.addEventListener('click', () => {
     if (window.animeAudio) window.animeAudio.playAwakeningBurst();
 
-    // Trigger sequential explosions across viewport
     const w = window.innerWidth;
     const h = window.innerHeight;
     for (let i = 0; i < 5; i++) {
@@ -125,10 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Dynamic Typewriter Effect
   const typewriterElement = document.getElementById('typewriter');
   const roles = [
-    'AI/ML Engineer & SDE',
-    'Deep Learning Researcher',
-    'Distributed Systems Architect',
-    'High-Performance Systems Engineer',
+    'AI/ML Engineer & SDE Intern',
+    'GenAI & LangGraph Architect',
+    'Computer Vision & Distributed Systems',
+    'FastAPI & Cloud Backend Developer',
     "World's #1 Egoist Developer"
   ];
   let roleIndex = 0;
@@ -149,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!isDeleting && charIndex === currentRole.length) {
-      typingDelay = 1800; // Pause at end of text
+      typingDelay = 1800;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
@@ -186,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Interactive CLI Terminal
+  // 7. Interactive CLI Terminal (Full Resume & Project Intelligence)
   const terminalInput = document.getElementById('terminalInput');
   const terminalBody = document.getElementById('terminalBody');
   const commandHistory = [];
@@ -195,45 +191,70 @@ document.addEventListener('DOMContentLoaded', () => {
   const terminalCommands = {
     help: () => `
 <div class="term-cyan">=== AVAILABLE DIRECTIVES ===</div>
-- <strong class="term-green">about</strong>: Profile overview & credentials
-- <strong class="term-green">skills</strong>: Inspect technical weapons & breathing forms
-- <strong class="term-green">projects</strong>: Review operational domains & codebases
-- <strong class="term-green">contact</strong>: Communication links & email transmission
-- <strong class="term-green">hire</strong>: Mission readiness & availability status
-- <strong class="term-green">theme</strong>: Toggle between Blue Lock and Demon Slayer modes
+- <strong class="term-green">about</strong>: Profile overview, education, and philosophy
+- <strong class="term-green">projects</strong>: Inspect all 9 end-to-end projects with GitHub links
+- <strong class="term-green">skills</strong>: View technical arsenal & frameworks
+- <strong class="term-green">experience</strong>: Review internship at Skillumni
+- <strong class="term-green">certifications</strong>: AWS Developer Associate, Oracle, NPTEL
+- <strong class="term-green">contact</strong>: Direct email, phone, and LinkedIn channels
+- <strong class="term-green">hire</strong>: Internship availability & readiness
+- <strong class="term-green">theme</strong>: Toggle Blue Lock vs Demon Slayer modes
 - <strong class="term-green">awaken</strong>: Unleash maximum chemical reaction / Hinokami burst
 - <strong class="term-green">clear</strong>: Wipe terminal logs
     `,
     about: () => `
 <div class="term-cyan">[EVALUATION RECORD]</div>
-<strong>Name:</strong> Varshith Reddy<br>
-<strong>Specialization:</strong> AI/ML Engineering & Distributed Software Systems<br>
-<strong>Philosophy:</strong> Combining data-driven analytical foresight (Metavision) with relentless execution discipline (Total Concentration).<br>
-<strong>Mission:</strong> Building resilient, high-throughput intelligence engines for global challenges.
-    `,
-    skills: () => `
-<div class="term-cyan">[ARSENAL ARCHIVE]</div>
-- <strong class="term-purple">AI / ML:</strong> PyTorch, TensorFlow, Hugging Face, LLMs, LangChain, OpenCV, MLOps<br>
-- <strong class="term-purple">Backend:</strong> Python, FastAPI, Go, Node.js, PostgreSQL, Redis, Docker, GCP<br>
-- <strong class="term-purple">Systems & DSA:</strong> Dynamic Programming, Trees, Graphs, Low-latency design
+<strong>Name:</strong> Varshith Reddy Bommineni<br>
+<strong>Education:</strong> B.Tech in CSE (Specialization in AI/ML), Lovely Professional University (2022 - 2026)<br>
+<strong>Target:</strong> 1st Internship in AI/ML Engineering & Full-Stack SDE<br>
+<strong>Philosophy:</strong> Blending the tactical foresight of Blue Lock's Metavision with the relentless discipline of Demon Slayer's Sun Breathing to build production-grade intelligence systems.
     `,
     projects: () => `
-<div class="term-cyan">[MISSION LOGS]</div>
-1. <strong class="term-green">Metavision Multimodal AI</strong>: Real-time visual reasoning agent.<br>
-2. <strong class="term-green">Hinokami Inference Engine</strong>: High-throughput distributed model server in Go & Python.<br>
-3. <strong class="term-green">Egoist Arena</strong>: Multi-agent reinforcement learning simulation sandbox.<br>
-4. <strong class="term-green">Neural Acoustic Classifier</strong>: Edge audio stream classifier with Web Audio API.
+<div class="term-cyan">[9 END-TO-END PROJECT ARSENAL]</div>
+1. <a href="https://github.com/varshith0810/PashuDrishti.ai" target="_blank" class="term-green"><strong>PashuDrishti.ai</strong></a>: 11k+ image livestock vision system, ONNX quantized, 120+ inf/s on AWS.<br>
+2. <a href="https://github.com/varshith0810/MarketPrism" target="_blank" class="term-green"><strong>MarketPrism</strong></a>: LangGraph financial intelligence engine, 16+ feeds, Redis cache, 450+ RPS.<br>
+3. <a href="https://github.com/varshith0810/taskflow" target="_blank" class="term-green"><strong>TaskFlow</strong></a>: High-concurrency task orchestration with FastAPI, PostgreSQL, AWS SQS & Lambda.<br>
+4. <a href="https://github.com/varshith0810/CodeCub" target="_blank" class="term-green"><strong>CodeCub</strong></a>: LangGraph multi-agent software engineering team (Planner, Architect, Coder).<br>
+5. <a href="https://github.com/varshith0810/TriageAI" target="_blank" class="term-green"><strong>TriageAI</strong></a>: GitHub issue triage POC evaluating 24+ LLMs with 95%+ accuracy.<br>
+6. <a href="https://github.com/varshith0810/MediMind" target="_blank" class="term-green"><strong>MediMind</strong></a>: High-precision medical document RAG with Qdrant and SQLite FTS5.<br>
+7. <a href="https://github.com/varshith0810/BuddyHire" target="_blank" class="term-green"><strong>BuddyHire</strong></a>: AI talent recruiter with Model Context Protocol (MCP) server.<br>
+8. <a href="https://github.com/varshith0810/EyeQ" target="_blank" class="term-green"><strong>EyeQ</strong></a>: Student engagement & emotion classifier across 6 cognitive states.<br>
+9. <a href="https://github.com/varshith0810/DataPantry" target="_blank" class="term-green"><strong>DataPantry</strong></a>: Medallion Architecture (Bronze->Silver->Gold) data warehouse & ETL.
+    `,
+    skills: () => `
+<div class="term-cyan">[TECHNICAL ARSENAL]</div>
+- <strong class="term-purple">Languages:</strong> Python, SQL, Java, C++, JavaScript/TypeScript<br>
+- <strong class="term-purple">AI / ML:</strong> PyTorch, OpenCV, ONNX Runtime, LangChain, LangGraph, Hugging Face, Scikit-learn<br>
+- <strong class="term-purple">Cloud & DevOps:</strong> AWS (Lambda, SQS, SNS, RDS, S3, Cognito, ECS, EC2), Docker, CI/CD<br>
+- <strong class="term-purple">Databases:</strong> PostgreSQL, MySQL, Redis, DynamoDB, SQLite, SQL Server<br>
+- <strong class="term-purple">Tools & Tracing:</strong> Langfuse, Postman, Power BI, Git, Linux/Bash, PyTest
+    `,
+    experience: () => `
+<div class="term-cyan">[WORK EXPERIENCE]</div>
+<strong>Skillumni</strong> — Business Development Associate (Technical Solutions Intern)<br>
+<span class="term-dim">July 2024 – Present | Remote</span><br>
+• Led technical discovery sessions for enterprise clients to secure 12 client software adoptions.<br>
+• Built custom Python data extraction scripts and SQL pipelines, slashing issue turnaround by 30%.<br>
+• Boosted client onboarding efficiency by 25% by configuring API workflows.
+    `,
+    certifications: () => `
+<div class="term-cyan">[VERIFIED CREDENTIALS]</div>
+• <strong>AWS:</strong> Certified Developer Associate / Cloud Solutions<br>
+• <strong>Oracle:</strong> Agentic AI Foundations Associate<br>
+• <strong>Oracle:</strong> Data Platform Associate<br>
+• <strong>NPTEL:</strong> Cloud Computing Certification
     `,
     contact: () => `
 <div class="term-cyan">[COMMUNICATION CHANNELS]</div>
-- <strong>Email:</strong> <a href="mailto:bomminenivarshith@gmail.com" class="term-green" style="text-decoration: underline;">bomminenivarshith@gmail.com</a><br>
-- <strong>GitHub:</strong> <a href="https://github.com/varshith0810" target="_blank" class="term-green" style="text-decoration: underline;">github.com/varshith0810</a><br>
-- <strong>Location:</strong> Ready to deploy worldwide (Remote / On-site)
+• <strong>Email:</strong> <a href="mailto:bomminenivarshith@gmail.com" class="term-green">bomminenivarshith@gmail.com</a><br>
+• <strong>Phone / WhatsApp:</strong> <a href="tel:+917986139387" class="term-green">+91-7986139387</a><br>
+• <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/varshith-reddy-bommineni" target="_blank" class="term-green">linkedin.com/in/varshith-reddy-bommineni</a><br>
+• <strong>GitHub:</strong> <a href="https://github.com/varshith0810" target="_blank" class="term-green">github.com/varshith0810</a>
     `,
     hire: () => `
-<div class="term-green">[STATUS: HIGHLY ACTIVE & AVAILABLE]</div>
-Seeking full-time roles, elite research challenges, and high-impact engineering opportunities.
-Transmitting immediate response to all recruiter and engineering leads!
+<div class="term-green">[INTERNSHIP READINESS: 100% ACTIVE]</div>
+Actively interviewing for Summer/Fall AI/ML Engineer & SDE Internship opportunities.<br>
+Ready to build, deploy, and optimize production pipelines immediately. Remote or on-site ready!
     `,
     theme: () => {
       themeToggle.click();
@@ -261,13 +282,11 @@ Transmitting immediate response to all recruiter and engineering leads!
         const cmd = rawCmd.toLowerCase();
         terminalInput.value = '';
 
-        // Append user prompt log
         const logLine = document.createElement('div');
         logLine.className = 'terminal-log';
         logLine.innerHTML = `<span class="term-prompt">varshith&gt;</span> ${rawCmd}`;
         terminalBody.appendChild(logLine);
 
-        // Process command
         const responseLine = document.createElement('div');
         responseLine.className = 'terminal-log';
 
@@ -330,9 +349,8 @@ Transmitting immediate response to all recruiter and engineering leads!
       const email = document.getElementById('contactEmail').value;
       const message = document.getElementById('contactMessage').value;
 
-      // Construct mailto as guaranteed client-side dispatch
-      const subject = encodeURIComponent(`[Portfolio Contact] Directive from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const subject = encodeURIComponent(`[Internship Opportunity / Inquiry] Directive from ${name}`);
+      const body = encodeURIComponent(`Sender: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
       window.location.href = `mailto:bomminenivarshith@gmail.com?subject=${subject}&body=${body}`;
 
       if (window.animeAudio) window.animeAudio.playKatanaSlash();
