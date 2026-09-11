@@ -2,7 +2,7 @@
 
 An anime-themed, interactive developer portfolio fusing **Blue Lock (Egoist Metavision)** and **Demon Slayer (Hinokami Breathing)** aesthetics. Built with modern Vanilla web standards, ready for immediate hosting on **GitHub Pages**.
 
-🔗 **Live Portfolio URL:** [https://varshith0810.github.io/varshithreddy.github.io/](https://varshith0810.github.io/varshithreddy.github.io/)
+🔗 **Live Portfolio URL:** [https://varshith0810.github.io/](https://varshith0810.github.io/)
 
 ---
 
