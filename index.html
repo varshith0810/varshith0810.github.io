@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varshith Reddy | AI/ML Engineer & SDE</title>
+  <meta name="description" content="Portfolio of Varshith Reddy - AI/ML Engineer & Full-Stack SDE. Blending Blue Lock Egoist Metavision and Demon Slayer Hinokami Breathing with elite system engineering.">
+  <meta name="keywords" content="Varshith Reddy, AI Engineer, ML Engineer, Software Development Engineer, Portfolio, Blue Lock, Demon Slayer, Deep Learning, Full Stack">
+  <meta name="author" content="Varshith Reddy">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Varshith Reddy | AI/ML Engineer & SDE">
+  <meta property="og:description" content="High-octane portfolio blending Blue Lock Metavision & Demon Slayer Breathing techniques with distributed systems & AI/ML architecture.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon / Icon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bluelock.css">
+  <link rel="stylesheet" href="css/demonslayer.css">
+</head>
+<body data-theme="bluelock">
+
+  <!-- Fullscreen Interactive Canvas (Aura Particles, Metavision Network, Katana Slash) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="brand-symbol">VR</div>
+        <div class="brand-text">VARSHITH<span>.DEV</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#status" class="nav-link">Evaluation HUD</a></li>
+          <li><a href="#skills" class="nav-link">Arsenal</a></li>
+          <li><a href="#projects" class="nav-link">Domains</a></li>
+          <li><a href="#journey" class="nav-link">Journey</a></li>
+          <li><a href="#contact" class="nav-link">Terminal</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Audio SFX Toggle -->
+        <button class="btn-icon" id="audioToggle" aria-label="Toggle Anime Audio SFX" title="Toggle Sound FX">
+          <svg id="soundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Domain Shift (Theme Switcher) -->
+        <button class="theme-switch-btn" id="themeToggle" aria-label="Shift Domain Theme">
+          <span id="themeLabel">EGO MODE (BLUE LOCK)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-meta-badge">
+          <span class="pulse-dot"></span>
+          <span id="heroBadgeText">METAVISION ACTIVE • PLAYER #1</span>
+        </div>
+
+        <div style="position: relative;">
+          <div class="hero-kanji-watermark" id="kanjiWatermark">世界一のエゴイスト</div>
+          <h1 class="hero-title">
+            I AM <span class="gradient-text">VARSHITH REDDY</span>
+          </h1>
+        </div>
+
+        <h2 class="hero-subtitle">
+          <span>Specialization:</span>
+          <span class="typewriter-text" id="typewriter">AI/ML Engineer & SDE</span>
+        </h2>
+
+        <p class="hero-description">
+          Architecting high-scale distributed systems, multimodal neural models, and high-throughput software with the analytical foresight of <strong>Blue Lock's Metavision</strong> and the relentless mastery of <strong>Demon Slayer's Sun Breathing</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary" id="exploreBtn">
+            <span>Analyze Domains</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#contact" class="btn-secondary" id="contactBtn">
+            <span>Summon Katana (Contact)</span>
+          </a>
+          <button class="btn-awakening" id="awakenBtn" title="Trigger full-screen anime aura explosion">
+            <span>⚡ AWAKEN EGO</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tactical Hero Card (3D Tilt) -->
+      <div class="hero-visual">
+        <div class="hero-avatar-frame" data-tilt id="heroCard">
+          <div class="avatar-badge-top">
+            <span id="hudRankTop">RANK S // EGOIST</span>
+            <span>SPEC: AI × SDE</span>
+          </div>
+
+          <div class="avatar-graphic-container">
+            <div class="avatar-halo"></div>
+            <!-- Anime Tactical Emblem SVG -->
+            <svg class="avatar-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" stroke="currentColor" stroke-width="3" stroke-dasharray="4 2" />
+              <polygon points="50,15 80,30 80,70 50,85 20,70 20,30" stroke="currentColor" stroke-width="2" />
+              <circle cx="50" cy="50" r="14" fill="currentColor" opacity="0.8" />
+              <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="1.5" opacity="0.6" />
+              <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.6" />
+            </svg>
+            <div class="avatar-tagline" id="avatarTagline">覚醒・FLOW STATE</div>
+          </div>
+
+          <div class="avatar-stats-bottom">
+            <div>
+              <div class="avatar-stat-num">98%</div>
+              <div class="avatar-stat-lbl">AI / ML</div>
+            </div>
+            <div>
+              <div class="avatar-stat-num">95%</div>
+              <div class="avatar-stat-lbl">Systems</div>
+            </div>
+            <div>
+              <div class="avatar-stat-num">96%</div>
+              <div class="avatar-stat-lbl">Algo / DSA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evaluation Status HUD Section -->
+  <section id="status">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" id="statusTag">METAVISION SCAN REPORT</div>
+        <h2 class="section-title">Tactical Evaluation Status</h2>
+        <p class="section-subtitle">Real-time breakdown of computational metrics, architecture proficiencies, and tactical engineering depth.</p>
+      </div>
+
+      <div class="hud-grid">
+        <!-- AI/ML Evaluation -->
+        <div class="hud-card" data-tilt>
+          <div class="hud-card-header">
+            <div class="hud-title">
+              <span>🧠</span>
+              <span>Machine Learning & AI</span>
+            </div>
+            <span class="hud-badge">LEVEL S</span>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-label-wrap">
+              <span>Deep Learning & Neural Architectures</span>
+              <span>98%</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" style="width: 98%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-label-wrap">
+              <span>LLMs, Transformers & Agentic Workflows</span>
+              <span>95%</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-label-wrap">
+              <span>Computer Vision & Multimodal Embeddings</span>
+              <span>92%</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Engineering & Systems -->
+        <div class="hud-card" data-tilt>
+          <div class="hud-card-header">
+            <div class="hud-title">
+              <span>⚡</span>
+              <span>Software & Distributed Systems</span>
+            </div>
+            <span class="hud-badge">LEVEL S</span>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-label-wrap">
+              <span>Data Structures & Algorithmic Problem Solving</span>
+              <span>96%</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" style="width: 96%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-label-wrap">
+              <span>High-Throughput APIs & Microservices</span>
+              <span>94%</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" style="width: 94%;"></div>
+            </div>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-label-wrap">
+              <span>Distributed Pipelines & Cloud Infra (Docker/GCP)</span>
+              <span>91%</span>
+            </div>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" style="width: 91%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Breathing Techniques Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" id="skillsTag">BREATHING TECHNIQUES & WEAPONS</div>
+        <h2 class="section-title">Technical Arsenal</h2>
+        <p class="section-subtitle">Core stacks, frameworks, and engineering tools mastered for production systems.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="skills-filter-nav">
+        <button class="skill-tab-btn active" data-filter="all">All Disciplines</button>
+        <button class="skill-tab-btn" data-filter="aiml">AI / ML & Deep Learning</button>
+        <button class="skill-tab-btn" data-filter="backend">Backend & Systems</button>
+        <button class="skill-tab-btn" data-filter="frontend">Frontend & Creative UI</button>
+        <button class="skill-tab-btn" data-filter="core">Algorithms & Cloud</button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid" id="skillsGrid">
+        <!-- AI/ML Skills -->
+        <div class="skill-card" data-category="aiml" data-tilt>
+          <div class="skill-icon-wrap">🔥</div>
+          <div class="skill-name">PyTorch & TensorFlow</div>
+          <div class="skill-desc">Designing custom neural networks, loss functions, distributed training, and fine-tuning pipelines.</div>
+          <div class="skill-mastery">Mastery: 96% • Hinokami Kagura</div>
+        </div>
+
+        <div class="skill-card" data-category="aiml" data-tilt>
+          <div class="skill-icon-wrap">🔮</div>
+          <div class="skill-name">Transformers & LLMs</div>
+          <div class="skill-desc">Hugging Face, LoRA/QLoRA adaptation, LangChain, LlamaIndex, multi-agent orchestrations.</div>
+          <div class="skill-mastery">Mastery: 94% • Metavision Focus</div>
+        </div>
+
+        <div class="skill-card" data-category="aiml" data-tilt>
+          <div class="skill-icon-wrap">👁️</div>
+          <div class="skill-name">Computer Vision</div>
+          <div class="skill-desc">OpenCV, YOLO, segmentation models, vision-language grounding, real-time video analytics.</div>
+          <div class="skill-mastery">Mastery: 91% • Spatial Awareness</div>
+        </div>
+
+        <div class="skill-card" data-category="aiml" data-tilt>
+          <div class="skill-icon-wrap">📊</div>
+          <div class="skill-name">MLOps & Serving</div>
+          <div class="skill-desc">ONNX, TensorRT, Triton Server, model quantization, drift monitoring, data pipelines.</div>
+          <div class="skill-mastery">Mastery: 89% • Chemical Flow</div>
+        </div>
+
+        <!-- Backend Skills -->
+        <div class="skill-card" data-category="backend" data-tilt>
+          <div class="skill-icon-wrap">🐍</div>
+          <div class="skill-name">Python & FastAPI</div>
+          <div class="skill-desc">High-speed async microservices, Pydantic validation, dependency injection, WebSockets.</div>
+          <div class="skill-mastery">Mastery: 98% • Water Breathing Form</div>
+        </div>
+
+        <div class="skill-card" data-category="backend" data-tilt>
+          <div class="skill-icon-wrap">⚡</div>
+          <div class="skill-name">Go & Node.js</div>
+          <div class="skill-desc">Concurrent goroutines, low-latency microservices, RESTful and gRPC inter-service communication.</div>
+          <div class="skill-mastery">Mastery: 90% • Thunder Speed</div>
+        </div>
+
+        <div class="skill-card" data-category="backend" data-tilt>
+          <div class="skill-icon-wrap">🗄️</div>
+          <div class="skill-name">PostgreSQL & Redis</div>
+          <div class="skill-desc">Complex query indexing, ACID compliance, in-memory caching, pub/sub streaming queues.</div>
+          <div class="skill-mastery">Mastery: 93% • Absolute Defense</div>
+        </div>
+
+        <div class="skill-card" data-category="backend" data-tilt>
+          <div class="skill-icon-wrap">🐳</div>
+          <div class="skill-name">Docker & Kubernetes</div>
+          <div class="skill-desc">Containerization, multi-stage builds, orchestration, resilient deployment architectures.</div>
+          <div class="skill-mastery">Mastery: 88% • Domain Barrier</div>
+        </div>
+
+        <!-- Frontend Skills -->
+        <div class="skill-card" data-category="frontend" data-tilt>
+          <div class="skill-icon-wrap">🌐</div>
+          <div class="skill-name">TypeScript & React</div>
+          <div class="skill-desc">Component-driven reactive architectures, state machines, custom hooks, performant web apps.</div>
+          <div class="skill-mastery">Mastery: 93% • Flow State UI</div>
+        </div>
+
+        <div class="skill-card" data-category="frontend" data-tilt>
+          <div class="skill-icon-wrap">🎨</div>
+          <div class="skill-name">Canvas & WebGL</div>
+          <div class="skill-desc">High-framerate particle systems, 60fps animations, Web Audio API procedural synthesis.</div>
+          <div class="skill-mastery">Mastery: 92% • Nichirin Blade Arts</div>
+        </div>
+
+        <!-- Core CS -->
+        <div class="skill-card" data-category="core" data-tilt>
+          <div class="skill-icon-wrap">🧩</div>
+          <div class="skill-name">Data Structures & DSA</div>
+          <div class="skill-desc">Dynamic programming, graphs, trees, algorithmic efficiency, competitive programming excellence.</div>
+          <div class="skill-mastery">Mastery: 96% • Metavision Logic</div>
+        </div>
+
+        <div class="skill-card" data-category="core" data-tilt>
+          <div class="skill-icon-wrap">☁️</div>
+          <div class="skill-name">Cloud & Git CI/CD</div>
+          <div class="skill-desc">Google Cloud Platform, AWS, automated GitHub Actions, code security, linting & tests.</div>
+          <div class="skill-mastery">Mastery: 91% • Total Concentration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section (Matches & Domains) -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" id="projectsTag">OFFICIAL MATCHES & COMBAT ARCHIVE</div>
+        <h2 class="section-title">Featured Domains & Systems</h2>
+        <p class="section-subtitle">Real-world AI/ML applications and robust software systems engineered for scale and speed.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-tilt>
+          <div class="project-preview">
+            <div class="project-banner-symbol">視</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-type">AI/ML • MULTIMODAL INTELLIGENCE</div>
+            <h3 class="project-title">Metavision Multimodal AI</h3>
+            <p class="project-desc">
+              Autonomous vision-language agent that processes real-time camera streams, extracts spatial context, and triggers automated actions using fine-tuned vision transformers and LangChain workflows.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">LangChain</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">WebSockets</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/varshith0810" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>View Source</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <span>Request Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-tilt>
+          <div class="project-preview">
+            <div class="project-banner-symbol">炎</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-type">DISTRIBUTED SYSTEMS • BACKEND</div>
+            <h3 class="project-title">Hinokami Distributed Inference Engine</h3>
+            <p class="project-desc">
+              High-throughput asynchronous model serving pipeline capable of auto-batching requests, distributed worker dispatching via Redis queues, and sub-15ms p99 latency guarantees.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Go</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Redis</span>
+              <span class="project-tag">Docker</span>
+              <span class="project-tag">gRPC</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/varshith0810" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>View Source</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <span>Architecture Doc</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-tilt>
+          <div class="project-preview">
+            <div class="project-banner-symbol">闘</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-type">FULL-STACK • MULTI-AGENT SIMULATION</div>
+            <h3 class="project-title">Egoist Arena: Multi-Agent Sandbox</h3>
+            <p class="project-desc">
+              Real-time competitive algorithmic environment where reinforcement learning agents interact, adapt strategies, and optimize outcomes in real-time with 3D Canvas visualizer.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Reinforcement Learning</span>
+              <span class="project-tag">Canvas / WebGL</span>
+              <span class="project-tag">Node.js</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/varshith0810" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>View Source</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <span>Simulate</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-tilt>
+          <div class="project-preview">
+            <div class="project-banner-symbol">音</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-type">AUDIO AI • DEEP LEARNING</div>
+            <h3 class="project-title">Neural Acoustic Stream Classifier</h3>
+            <p class="project-desc">
+              Low-latency edge speech & audio event detection model utilizing 1D Convolutions and Mel-frequency spectrograms to deliver on-device intelligence without cloud dependency.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Web Audio API</span>
+              <span class="project-tag">TensorFlow Lite</span>
+              <span class="project-tag">NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/varshith0810" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>View Source</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <span>Inspect Model</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey & Selection Arc Section -->
+  <section id="journey">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" id="journeyTag">SELECTION PHASES & AWAKENING</div>
+        <h2 class="section-title">The Engineering Arc</h2>
+        <p class="section-subtitle">Chronological progression from core algorithmic mastery to enterprise AI and distributed systems development.</p>
+      </div>
+
+      <div class="timeline-track">
+        <!-- Phase 3 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card" data-tilt>
+            <div class="timeline-phase-tag">PHASE 3 // NEO EGOIST LEAGUE (PRESENT)</div>
+            <h3 class="timeline-role">AI/ML Engineer & Full-Stack SDE</h3>
+            <div class="timeline-org">Production Engineering & Open Source Research</div>
+            <p class="timeline-desc">
+              Focusing on modern generative AI systems, high-speed agentic loops, distributed model inference serving, and end-to-end full-stack architectures. Deploying real-world applications with high availability and benchmarked performance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card" data-tilt>
+            <div class="timeline-phase-tag">PHASE 2 // SECOND SELECTION</div>
+            <h3 class="timeline-role">Software Development & Systems Internships</h3>
+            <div class="timeline-org">Tech Industry Collaborations & Hackathons</div>
+            <p class="timeline-desc">
+              Engineered scalable backend REST APIs, automated data cleaning pipelines, and responsive frontend dashboards. Built microservices with Docker, optimized database queries, and won technical hackathons with innovative AI solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phase 1 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card" data-tilt>
+            <div class="timeline-phase-tag">PHASE 1 // FOUNDATION & FIRST SELECTION</div>
+            <h3 class="timeline-role">Computer Science & Engineering Discipline</h3>
+            <div class="timeline-org">B.Tech in Computer Science & Engineering</div>
+            <p class="timeline-desc">
+              Mastered foundational Data Structures, Algorithms, Operating Systems, Database Management Systems, and Computer Networks. Consistently solved complex algorithmic challenges and built passion projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terminal & Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" id="contactTag">DIRECT CONNECTION PROTOCOL</div>
+        <h2 class="section-title">Summon Katana & Ego Terminal</h2>
+        <p class="section-subtitle">Send a dispatch directly through the interactive CLI or through the transmission channels below.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Interactive CLI Terminal -->
+        <div class="terminal-window">
+          <div class="terminal-top-bar">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-title">varshith@egoist-terminal:~$</div>
+            <div style="font-size: 0.75rem; color: #64748b;">v2.4.0</div>
+          </div>
+
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-log">
+              <span class="term-cyan">[SYSTEM]</span> Metavision & Hinokami Protocol initialized.<br>
+              <span class="term-dim">Type <strong class="term-green">'help'</strong> to view available commands, or <strong class="term-green">'contact'</strong> to transmit your message.</span>
+            </div>
+          </div>
+
+          <div style="padding: 12px 20px; background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.06);">
+            <div class="terminal-input-row">
+              <span class="term-prompt">varshith&gt;</span>
+              <input type="text" class="terminal-input" id="terminalInput" placeholder="Type command here (e.g. help, skills, hire)..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+
+        <!-- Transmission Form & Quick Channels -->
+        <div class="contact-form-card" data-tilt>
+          <div class="contact-quick-links">
+            <a href="https://github.com/varshith0810" target="_blank" rel="noopener noreferrer" class="quick-contact-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <button class="quick-contact-btn" id="copyEmailBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copyEmailText">Copy Email</span>
+            </button>
+          </div>
+
+          <form id="contactForm" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Isagi Yoichi / Tanjiro Kamado" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Your Email</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="e.g. striker@flow.dev" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Transmission Directive</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="Discuss a project, AI/ML challenge, or opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" id="submitFormBtn">
+              <span>Transmit Directive</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-quote" id="footerQuote">
+        「 世界一のエゴイストでなければ、世界一のストライカーにはなれない 」
+      </div>
+      <p class="footer-sub">
+        Architected by <strong>Varshith Reddy</strong> &bull; Crafted with Modern Web Standards &bull; Hosted on GitHub Pages
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

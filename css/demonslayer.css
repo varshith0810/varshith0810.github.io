@@ -1,0 +1,76 @@
+/* ==========================================================================
+   DEMON SLAYER THEME TOKENS & STYLES (BREATHING STYLE MODE)
+   ========================================================================== */
+
+body[data-theme="demonslayer"] {
+  --bg-deep: #0b0713;
+  --nav-bg: rgba(11, 7, 19, 0.88);
+  --card-bg: rgba(22, 13, 34, 0.78);
+  --text-main: #fff8f2;
+  --text-secondary: #d5c8be;
+  --text-muted: #968680;
+
+  --accent-cyan: #ff4d00;      /* Hinokami Sun Flame */
+  --accent-purple: #00b4d8;    /* Water Breathing Azure */
+  --accent-green: #ffb703;     /* Sun Flare Gold */
+  --accent-gradient: linear-gradient(135deg, #ff3b00 0%, #ff9500 60%, #00b4d8 100%);
+  --title-gradient: linear-gradient(135deg, #ffffff 15%, #ff9500 60%, #ff3b00 100%);
+  --accent-glow: rgba(255, 69, 0, 0.32);
+  --accent-glow-strong: rgba(255, 69, 0, 0.6);
+  --border-glow: rgba(255, 110, 0, 0.22);
+
+  --theme-toggle-bg: rgba(255, 69, 0, 0.12);
+  --theme-toggle-border: #ff4500;
+}
+
+/* Background Subtle Ichimatsu Checkered / Wisteria Motif */
+body[data-theme="demonslayer"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 69, 0, 0.03) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(255, 69, 0, 0.03) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(255, 69, 0, 0.03) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(255, 69, 0, 0.03) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Nichirin Blade Slash Accent on Cards */
+body[data-theme="demonslayer"] .project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff9500, #ff3b00, transparent);
+  transform: rotate(-35deg);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Sun Flame Bar Fill */
+body[data-theme="demonslayer"] .stat-bar-fill {
+  background: linear-gradient(90deg, #ff3b00, #ffb703);
+  box-shadow: 0 0 12px rgba(255, 120, 0, 0.5);
+}
+
+/* Demon Slayer Hashira Pill */
+body[data-theme="demonslayer"] .hero-meta-badge {
+  background: rgba(255, 69, 0, 0.1);
+  border-color: #ff4500;
+  color: #ff9500;
+}
+
+body[data-theme="demonslayer"] .pulse-dot {
+  background: #ff3b00;
+  box-shadow: 0 0 10px #ff3b00;
+}
