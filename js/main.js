@@ -58,6 +58,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const awakenBtn = document.getElementById('awakenBtn');
   const footerQuote = document.getElementById('footerQuote');
 
+  // Motion Avatar Elements
+  const heroAvatarWrap = document.getElementById('heroAvatarWrap');
+  const heroAvatarImg = document.getElementById('heroAvatarImg');
+  const motionBadgeText = document.getElementById('motionBadgeText');
+
+  // Avatar Modal Elements
+  const avatarModal = document.getElementById('avatarModal');
+  const avatarModalClose = document.getElementById('avatarModalClose');
+  const avatarModalImg = document.getElementById('avatarModalImg');
+  const avatarModalRank = document.getElementById('avatarModalRank');
+  const avatarModalTitle = document.getElementById('avatarModalTitle');
+  const avatarModalQuote = document.getElementById('avatarModalQuote');
+  const specLabel1 = document.getElementById('specLabel1');
+  const specVal1 = document.getElementById('specVal1');
+  const specLabel2 = document.getElementById('specLabel2');
+  const specVal2 = document.getElementById('specVal2');
+  const specLabel3 = document.getElementById('specLabel3');
+  const specVal3 = document.getElementById('specVal3');
+  const specLabel4 = document.getElementById('specLabel4');
+  const specVal4 = document.getElementById('specVal4');
+  const avatarModalShiftBtn = document.getElementById('avatarModalShiftBtn');
+  const modalShiftBtnText = document.getElementById('modalShiftBtnText');
+  const avatarDownloadBtn = document.getElementById('avatarDownloadBtn');
+
   const savedTheme = localStorage.getItem('portfolio_theme') || 'bluelock';
   applyTheme(savedTheme, false);
 
@@ -65,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.dataset.theme = theme;
     localStorage.setItem('portfolio_theme', theme);
     if (canvasEngine) canvasEngine.setTheme(theme);
+
+    // Trigger visual anime shift flash on avatar
+    if (heroAvatarWrap) {
+      heroAvatarWrap.classList.add('avatar-shifting');
+      setTimeout(() => heroAvatarWrap.classList.remove('avatar-shifting'), 500);
+    }
 
     if (theme === 'bluelock') {
       themeLabel.textContent = 'EGO MODE (BLUE LOCK)';
@@ -78,6 +108,32 @@ document.addEventListener('DOMContentLoaded', () => {
       contactTag.textContent = 'DIRECT CONNECTION PROTOCOL';
       awakenBtn.innerHTML = '<span>⚡ AWAKEN EGO</span>';
       footerQuote.textContent = '「 世界一のエゴイストでなければ、世界一のストライカーにはなれない 」';
+
+      // Blue Lock Motion Avatar
+      if (heroAvatarImg) {
+        heroAvatarImg.src = 'assets/avatar_bluelock_motion.gif';
+        heroAvatarImg.alt = 'Varshith Reddy Anime Motion Avatar - Blue Lock Egoist';
+      }
+      if (motionBadgeText) motionBadgeText.textContent = 'METAVISION MOTION';
+
+      // Blue Lock Modal Spec Sync
+      if (avatarModalImg) avatarModalImg.src = 'assets/avatar_bluelock_motion.gif';
+      if (avatarModalRank) avatarModalRank.textContent = 'RANK S // EGOIST STRIKER';
+      if (avatarModalTitle) avatarModalTitle.textContent = 'Isagi Yoichi x Solo Leveling Shadow Form';
+      if (avatarModalQuote) avatarModalQuote.textContent = '"In this domain, I adapt and devour every dimensional match."';
+      if (specLabel1) specLabel1.textContent = 'EGO QUOTIENT';
+      if (specVal1) specVal1.textContent = '99.8% // MONARCH';
+      if (specLabel2) specLabel2.textContent = 'METAVISION SCAN';
+      if (specVal2) specVal2.textContent = '360° SPATIAL FLOW';
+      if (specLabel3) specLabel3.textContent = 'WEAPON PROTOCOL';
+      if (specVal3) specVal3.textContent = 'DIRECT SHOT & RUNIC BLADE';
+      if (specLabel4) specLabel4.textContent = 'DOMAIN ENGINE';
+      if (specVal4) specVal4.textContent = 'SHADOW REVERSION (BLUELOCK)';
+      if (modalShiftBtnText) modalShiftBtnText.textContent = '🔥 SHIFT TO DEMON SLAYER';
+      if (avatarDownloadBtn) {
+        avatarDownloadBtn.href = 'assets/avatar_bluelock_motion.gif';
+        avatarDownloadBtn.setAttribute('download', 'varshith_reddy_avatar_bluelock_motion.gif');
+      }
     } else {
       themeLabel.textContent = 'BREATHING MODE (DEMON SLAYER)';
       heroBadgeText.textContent = 'TOTAL CONCENTRATION • HASHIRA INTERN';
@@ -90,6 +146,32 @@ document.addEventListener('DOMContentLoaded', () => {
       contactTag.textContent = 'KASUGAI CROW DISPATCH';
       awakenBtn.innerHTML = '<span>🔥 HINOKAMI KAGURA</span>';
       footerQuote.textContent = '「 胸を張って生きろ。己の弱さや不甲斐なさにどれだけ打ちのめされようと、心を燃やせ 」';
+
+      // Demon Slayer Motion Avatar
+      if (heroAvatarImg) {
+        heroAvatarImg.src = 'assets/avatar_demonslayer_motion.gif';
+        heroAvatarImg.alt = 'Varshith Reddy Anime Motion Avatar - Sun & Water Breathing Hashira';
+      }
+      if (motionBadgeText) motionBadgeText.textContent = 'BREATHING MOTION';
+
+      // Demon Slayer Modal Spec Sync
+      if (avatarModalImg) avatarModalImg.src = 'assets/avatar_demonslayer_motion.gif';
+      if (avatarModalRank) avatarModalRank.textContent = 'HASHIRA // SUN & WATER BREATHING';
+      if (avatarModalTitle) avatarModalTitle.textContent = 'Kamado Tanjiro Hinokami Kagura Form';
+      if (avatarModalQuote) avatarModalQuote.textContent = '"Set your heart ablaze. Overcome every limit with Total Concentration."';
+      if (specLabel1) specLabel1.textContent = 'BREATHING STYLE';
+      if (specVal1) specVal1.textContent = 'SUN & WATER DUAL BREATH';
+      if (specLabel2) specLabel2.textContent = 'CONCENTRATION';
+      if (specVal2) specVal2.textContent = 'TOTAL CONCENTRATION CONSTANT';
+      if (specLabel3) specLabel3.textContent = 'NICHIRIN BLADE';
+      if (specVal3) specVal3.textContent = 'BLACK NICHIRIN // CRIMSON RED';
+      if (specLabel4) specLabel4.textContent = 'HASHIRA DOMAIN';
+      if (specVal4) specVal4.textContent = 'DEMON SLAYER CORPS ARCHIVE';
+      if (modalShiftBtnText) modalShiftBtnText.textContent = '⚡ SHIFT TO BLUE LOCK';
+      if (avatarDownloadBtn) {
+        avatarDownloadBtn.href = 'assets/avatar_demonslayer_motion.gif';
+        avatarDownloadBtn.setAttribute('download', 'varshith_reddy_avatar_demonslayer_motion.gif');
+      }
     }
 
     if (playSound && window.animeAudio) {
@@ -102,6 +184,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = current === 'bluelock' ? 'demonslayer' : 'bluelock';
     applyTheme(next, true);
   });
+
+  // Avatar Modal Open / Close Controller
+  if (heroAvatarWrap && avatarModal) {
+    const openAvatarModal = () => {
+      avatarModal.classList.add('active');
+      avatarModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (window.animeAudio) window.animeAudio.playPuzzleClick();
+    };
+
+    const closeAvatarModal = () => {
+      avatarModal.classList.remove('active');
+      avatarModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (window.animeAudio) window.animeAudio.playPuzzleClick();
+    };
+
+    heroAvatarWrap.addEventListener('click', openAvatarModal);
+    heroAvatarWrap.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openAvatarModal();
+      }
+    });
+
+    if (avatarModalClose) {
+      avatarModalClose.addEventListener('click', closeAvatarModal);
+    }
+
+    avatarModal.addEventListener('click', (e) => {
+      if (e.target === avatarModal) {
+        closeAvatarModal();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && avatarModal.classList.contains('active')) {
+        closeAvatarModal();
+      }
+    });
+
+    if (avatarModalShiftBtn) {
+      avatarModalShiftBtn.addEventListener('click', () => {
+        const current = document.body.dataset.theme || 'bluelock';
+        const next = current === 'bluelock' ? 'demonslayer' : 'bluelock';
+        applyTheme(next, true);
+      });
+    }
+  }
 
   // 4. Awakening Special Power Burst
   awakenBtn.addEventListener('click', () => {

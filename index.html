@@ -128,8 +128,13 @@
 
           <div class="avatar-graphic-container">
             <div class="avatar-halo"></div>
-            <div class="hero-avatar-img-wrap">
-              <img src="assets/avatar.jpg" alt="Varshith Reddy Anime Avatar - Blue Lock x Demon Slayer" class="hero-avatar-img" loading="eager">
+            <div class="hero-avatar-img-wrap" id="heroAvatarWrap" role="button" tabindex="0" title="Click to inspect Anime Combat Avatar">
+              <div class="avatar-aura-ring"></div>
+              <img src="assets/avatar_bluelock_motion.gif" alt="Varshith Reddy Anime Motion Avatar - Blue Lock Egoist" id="heroAvatarImg" class="hero-avatar-img" loading="eager">
+              <div class="avatar-motion-badge" id="avatarMotionBadge">
+                <span class="motion-pulse-dot"></span>
+                <span id="motionBadgeText">METAVISION MOTION</span>
+              </div>
             </div>
             <div class="avatar-tagline" id="avatarTagline">覚醒・FLOW STATE</div>
           </div>
@@ -851,6 +856,60 @@
       </p>
     </div>
   </footer>
+
+  <!-- Anime Combat Avatar & Motion PFP Inspector Modal -->
+  <div class="avatar-modal-backdrop" id="avatarModal" aria-hidden="true" role="dialog" aria-labelledby="avatarModalTitle">
+    <div class="avatar-modal-dialog">
+      <button class="avatar-modal-close" id="avatarModalClose" aria-label="Close Inspector">&times;</button>
+      <div class="avatar-modal-content">
+        <div class="avatar-modal-left">
+          <div class="avatar-modal-img-frame">
+            <div class="avatar-modal-halo"></div>
+            <img id="avatarModalImg" src="assets/avatar_bluelock_motion.gif" alt="Combat Avatar Motion Preview" class="avatar-modal-img">
+            <div class="avatar-modal-fps-badge">
+              <span class="motion-pulse-dot"></span>
+              <span id="avatarModalFpsText">HD 60FPS MOTION ACTIVE</span>
+            </div>
+          </div>
+        </div>
+        <div class="avatar-modal-right">
+          <div class="avatar-modal-header">
+            <div class="avatar-modal-rank" id="avatarModalRank">RANK S // EGOIST STRIKER</div>
+            <h3 class="avatar-modal-title" id="avatarModalTitle">Isagi Yoichi x Solo Leveling Shadow Form</h3>
+            <p class="avatar-modal-quote" id="avatarModalQuote">"In this domain, I adapt and dominate every dimensional match."</p>
+          </div>
+
+          <div class="avatar-modal-specs">
+            <div class="avatar-spec-item">
+              <span class="spec-label" id="specLabel1">EGO QUOTIENT</span>
+              <span class="spec-val" id="specVal1">99.8% // MONARCH</span>
+            </div>
+            <div class="avatar-spec-item">
+              <span class="spec-label" id="specLabel2">METAVISION SCAN</span>
+              <span class="spec-val" id="specVal2">360° SPATIAL FLOW</span>
+            </div>
+            <div class="avatar-spec-item">
+              <span class="spec-label" id="specLabel3">WEAPON PROTOCOL</span>
+              <span class="spec-val" id="specVal3">DIRECT SHOT & RUNIC BLADE</span>
+            </div>
+            <div class="avatar-spec-item">
+              <span class="spec-label" id="specLabel4">DOMAIN ENGINE</span>
+              <span class="spec-val" id="specVal4">SHADOW REVERSION (BLUELOCK)</span>
+            </div>
+          </div>
+
+          <div class="avatar-modal-actions">
+            <button class="btn-primary" id="avatarModalShiftBtn">
+              <span id="modalShiftBtnText">⚡ SHIFT TO DEMON SLAYER</span>
+            </button>
+            <a href="assets/avatar_bluelock_motion.gif" id="avatarDownloadBtn" download="varshith_reddy_avatar_bluelock_motion.gif" class="btn-secondary">
+              <span>Download Motion PFP</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/audio.js"></script>

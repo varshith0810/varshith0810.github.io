@@ -85,3 +85,22 @@ body[data-theme="bluelock"] .stat-bar-fill {
   border: 1px solid rgba(0, 240, 255, 0.3);
   font-family: var(--font-display);
 }
+
+/* Blue Lock Metavision & Solo Leveling Shadow Monarch Avatar Aura Ring */
+body[data-theme="bluelock"] .avatar-aura-ring {
+  border: 2px dashed #00f0ff;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.45), inset 0 0 16px rgba(139, 92, 246, 0.4);
+}
+
+body[data-theme="bluelock"] .motion-pulse-dot {
+  background: #00ffcc;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+body[data-theme="bluelock"] .avatar-motion-badge {
+  border-color: rgba(0, 240, 255, 0.35);
+}
+
+body[data-theme="bluelock"] .avatar-modal-img-frame {
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.6), 0 0 25px rgba(139, 92, 246, 0.5);
+}
