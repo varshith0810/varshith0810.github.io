@@ -234,18 +234,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 4. Awakening Special Power Burst
+  // 4. Awakening Special Power Burst & Anime Cutscene
   awakenBtn.addEventListener('click', () => {
-    if (window.animeAudio) window.animeAudio.playAwakeningBurst();
+    const currentTheme = document.body.dataset.theme || 'bluelock';
 
+    // 1. Play theme-specific awakening audio
+    if (window.animeAudio) {
+      if (currentTheme === 'demonslayer') {
+        window.animeAudio.playHinokamiCutsceneSound();
+      } else {
+        window.animeAudio.playDirectShotCutsceneSound();
+      }
+    }
+
+    // 2. Trigger Fullscreen Anime Cutscene (Tanjiro Dual Slash / Isagi Dual Direct Shot)
+    if (window.animeCutscene) {
+      window.animeCutscene.triggerAwakening(currentTheme);
+    }
+
+    // 3. Ambient Canvas background power bursts
     const w = window.innerWidth;
     const h = window.innerHeight;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       setTimeout(() => {
         const x = Math.random() * (w * 0.8) + (w * 0.1);
         const y = Math.random() * (h * 0.8) + (h * 0.1);
         if (canvasEngine) canvasEngine.triggerBurst(x, y);
-      }, i * 90);
+      }, i * 100);
     }
   });
 

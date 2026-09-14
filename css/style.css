@@ -1572,3 +1572,19 @@ section {
     gap: 10px;
   }
 }
+
+/* Anime Awakening Screen Vibration */
+@keyframes animeScreenShakeIntense {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-10px, 8px) rotate(-1deg); }
+  30% { transform: translate(10px, -8px) rotate(1deg); }
+  45% { transform: translate(-8px, -6px) rotate(-0.5deg); }
+  60% { transform: translate(8px, 6px) rotate(0.5deg); }
+  75% { transform: translate(-4px, 4px) rotate(-0.2deg); }
+  90% { transform: translate(4px, -2px) rotate(0.2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.screen-shake-intense {
+  animation: animeScreenShakeIntense 0.48s ease-in-out;
+}

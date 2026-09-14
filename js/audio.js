@@ -297,6 +297,133 @@ class AnimeAudioEngine {
       console.debug(e);
     }
   }
+
+  // Hinokami Kagura Dual Solar Slash Cutscene Audio
+  playHinokamiCutsceneSound() {
+    if (this.isMuted) return;
+    try {
+      const ctx = this.getAudioContext();
+      const now = ctx.currentTime;
+
+      // Slash 1: Katana slice whoosh
+      this.playKatanaSlash();
+
+      // Slash 2: Staggered cross-slash
+      setTimeout(() => {
+        this.playKatanaSlash();
+      }, 280);
+
+      // Deep solar flame explosion boom at intersection
+      const sub = ctx.createOscillator();
+      const subGain = ctx.createGain();
+      sub.type = 'sine';
+      sub.frequency.setValueAtTime(140, now + 0.45);
+      sub.frequency.exponentialRampToValueAtTime(32, now + 1.2);
+
+      subGain.gain.setValueAtTime(0.001, now);
+      subGain.gain.setValueAtTime(0.4, now + 0.45);
+      subGain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+
+      sub.connect(subGain);
+      subGain.connect(ctx.destination);
+      sub.start(now + 0.45);
+      sub.stop(now + 1.2);
+
+      // Fiery sizzle noise buffer
+      const bufferSize = ctx.sampleRate * 0.9;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(1800, now + 0.45);
+      filter.frequency.exponentialRampToValueAtTime(300, now + 1.3);
+
+      const noiseGain = ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.001, now);
+      noiseGain.gain.setValueAtTime(0.18, now + 0.45);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 1.3);
+
+      noise.connect(filter);
+      filter.connect(noiseGain);
+      noiseGain.connect(ctx.destination);
+      noise.start(now + 0.45);
+      noise.stop(now + 1.35);
+    } catch (e) {
+      console.debug(e);
+    }
+  }
+
+  // Blue Lock Direct Shot Dual Volley Cutscene Audio
+  playDirectShotCutsceneSound() {
+    if (this.isMuted) return;
+    try {
+      const ctx = this.getAudioContext();
+      const now = ctx.currentTime;
+
+      // Heavy kinetic kick impact 1
+      const kick1 = ctx.createOscillator();
+      const kickGain1 = ctx.createGain();
+      kick1.type = 'triangle';
+      kick1.frequency.setValueAtTime(180, now);
+      kick1.frequency.exponentialRampToValueAtTime(45, now + 0.28);
+      kickGain1.gain.setValueAtTime(0.4, now);
+      kickGain1.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+      kick1.connect(kickGain1);
+      kickGain1.connect(ctx.destination);
+      kick1.start(now);
+      kick1.stop(now + 0.3);
+
+      // Heavy kinetic kick impact 2
+      const kick2 = ctx.createOscillator();
+      const kickGain2 = ctx.createGain();
+      kick2.type = 'triangle';
+      kick2.frequency.setValueAtTime(220, now + 0.28);
+      kick2.frequency.exponentialRampToValueAtTime(40, now + 0.58);
+      kickGain2.gain.setValueAtTime(0.001, now);
+      kickGain2.gain.setValueAtTime(0.42, now + 0.28);
+      kickGain2.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+      kick2.connect(kickGain2);
+      kickGain2.connect(ctx.destination);
+      kick2.start(now + 0.28);
+      kick2.stop(now + 0.6);
+
+      // Metavision sonic boom at intersection
+      const sub = ctx.createOscillator();
+      const subGain = ctx.createGain();
+      sub.type = 'sine';
+      sub.frequency.setValueAtTime(160, now + 0.45);
+      sub.frequency.exponentialRampToValueAtTime(28, now + 1.3);
+
+      subGain.gain.setValueAtTime(0.001, now);
+      subGain.gain.setValueAtTime(0.45, now + 0.45);
+      subGain.gain.exponentialRampToValueAtTime(0.001, now + 1.3);
+
+      sub.connect(subGain);
+      subGain.connect(ctx.destination);
+      sub.start(now + 0.45);
+      sub.stop(now + 1.3);
+
+      // Electric laser frequency sweep
+      const sweep = ctx.createOscillator();
+      const sweepGain = ctx.createGain();
+      sweep.type = 'sawtooth';
+      sweep.frequency.setValueAtTime(350, now + 0.45);
+      sweep.frequency.exponentialRampToValueAtTime(2400, now + 0.7);
+      sweepGain.gain.setValueAtTime(0.001, now);
+      sweepGain.gain.setValueAtTime(0.14, now + 0.45);
+      sweepGain.gain.exponentialRampToValueAtTime(0.001, now + 0.75);
+      sweep.connect(sweepGain);
+      sweepGain.connect(ctx.destination);
+      sweep.start(now + 0.45);
+      sweep.stop(now + 0.75);
+    } catch (e) {
+      console.debug(e);
+    }
+  }
 }
 
 // Attach globally
